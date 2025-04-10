@@ -62,6 +62,7 @@ const renderSection = (section, index) => {
 
 const TemplatePreview = (props) => {
     const { data } = props
+    // console.log("dataaaaa",data)
   return (
     <div css={chooseTemplateStyle}>
       {data?.template?.value?.template_components.map((section, index) => renderSection(section, index))}

@@ -23,7 +23,7 @@ export const generateInputs = (data) => {
         }
     });
 
-    console.log('results', result)
+    // console.log('results', result)
 
     return result;
 }

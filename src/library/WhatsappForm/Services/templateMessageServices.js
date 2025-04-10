@@ -48,7 +48,9 @@ const useTemplateMessageServices = ()=>{
     }
 
 
-    return {handleChangeTemplate,templateMessageValue,handleInputChangeTemplate}
+    console.log(templateMessageValue)
+
+    return {handleChangeTemplate,templateMessageValue,handleInputChangeTemplate , setTemplateMessageValue}
 
 }
 

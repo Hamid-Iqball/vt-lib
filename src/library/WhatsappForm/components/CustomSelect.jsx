@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 
 
-import React from 'react';
+
 import Select from 'react-select';
 
 
@@ -53,7 +54,7 @@ const CustomSelect = (props) => {
         menuList: (base) => ({
         ...base,
         zIndex: 9999999, // Ensures the option list appears above other elements
-        height:'110px',
+        // height:'110px',
         fontSize:12
         }),
     };

@@ -17,16 +17,17 @@ const reducer = (state, action) => {
       return { ...state, attachement: !state.attachement, emoji: false };
     case "HIDE_ATTACHMENT":
       return { ...state, attachement: false };
-      case "ON_CHANGE": 
-        return{
-            ...state,
-            [action.payload.name]: action.payload.value
-        };
-      case "SELECT_EMOJI": 
-        return{
-            ...state,
-                content: state.content + action.payload
-        };
+    case "ON_CHANGE": 
+      return{
+          ...state,
+          [action.payload.name]: action.payload.value
+      };
+    case "SELECT_EMOJI": 
+      return{
+          ...state,
+              content: state.content + action.payload
+      };
+ 
     default:
       return state;
   }
@@ -43,6 +44,7 @@ const useStandardMessagesServices = ()=>{
   const toggleAttachment = () => dispatch({ type: "TOGGLE_ATTACHMENT" });
   const hideAttachment = () => dispatch({ type: "HIDE_ATTACHMENT" });
 
+  
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (emojiRef.current && !emojiRef.current.contains(e.target)) {
@@ -76,7 +78,17 @@ const useStandardMessagesServices = ()=>{
     }
 
 
-    return { state, toggleEmoji, toggleAttachment,emojiRef,attachmentRef,handleChangeStandardMessage,freeFormSelectEmoji };
+    return {
+      state,
+      toggleEmoji,
+      toggleAttachment,
+      emojiRef,
+      attachmentRef,
+      handleChangeStandardMessage,
+      freeFormSelectEmoji,
+     
+    };
+    
 
 
 }

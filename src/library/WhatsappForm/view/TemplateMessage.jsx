@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import CustomSelect from '../components/customSelect'
 import TemplateView from './TemplateView'
 import TemplatePreview from "./TemplatePreview";
-import useTemplateMessageServices from "../Services/templateMessageServices";
+
 
 
 const templateMessageStyle = css`
@@ -13,8 +14,8 @@ const templateMessageStyle = css`
 `
 
 const TemplateMessage = (props) => {
-    const {handleChangeTemplate,templateMessageValue,handleInputChangeTemplate } = useTemplateMessageServices()
-    const {whatsappInitialFormValue} = props
+
+    const {whatsappInitialFormValue,handleChangeTemplate,templateMessageValue,handleInputChangeTemplate , setTemplateMessageValue} = props
 
   return (
     <div css={templateMessageStyle}>
@@ -31,7 +32,9 @@ const TemplateMessage = (props) => {
             <div>
                 <TemplateView 
                     data={templateMessageValue} 
+                    setTemplateMessageValue={setTemplateMessageValue}
                     handleInputChangeTemplate = {handleInputChangeTemplate}
+                    whatsappInitialFormValue={whatsappInitialFormValue}
                 
                 />
             </div>

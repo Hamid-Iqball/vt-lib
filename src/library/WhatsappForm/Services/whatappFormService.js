@@ -8,7 +8,7 @@ const useFormServices = ()=>{
         messageType:1,
         hash_key:'',
         templates:[],
-        freeFormMessageType:1
+        freeFormMessageType:"text"
 
     })
 
@@ -50,7 +50,7 @@ const useFormServices = ()=>{
                 }))
             }
         } catch (error) {
-            
+            console.log(error)
         }
     }
 
